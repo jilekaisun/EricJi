@@ -156,11 +156,13 @@
 <meta property="og:image" content="http://yoursite.com/2017/06/09/独立使用相机-Pro-Tutorial/14966545705192/all-alert-calibrating.jpg">
 <meta property="og:image" content="http://yoursite.com/2017/06/09/独立使用相机-Pro-Tutorial/14966545705192/all-alert-calibrationwin.jpg">
 <meta property="og:image" content="http://yoursite.com/2017/06/09/独立使用相机-Pro-Tutorial/14966545705192/wifi%20%E8%AE%BE%E7%BD%AE.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/06/09/独立使用相机-Pro-Tutorial/14966545705192/Mac Direct.png">
+<meta property="og:image" content="http://yoursite.com/2017/06/09/独立使用相机-Pro-Tutorial/14966545705192/Win Direct.png">
 <meta property="og:image" content="http://yoursite.com/2017/06/09/独立使用相机-Pro-Tutorial/14966545705192/%E9%99%80%E8%9E%BA%E4%BB%AA%E6%A0%A1%E6%AD%A3%E6%8F%90%E7%A4%BA.jpg">
 <meta property="og:image" content="http://yoursite.com/2017/06/09/独立使用相机-Pro-Tutorial/14966545705192/%E9%99%80%E8%9E%BA%E4%BB%AA%E6%A0%A1%E6%AD%A3%E4%B8%AD.jpg">
 <meta property="og:image" content="http://yoursite.com/2017/06/09/独立使用相机-Pro-Tutorial/14966545705192/%E7%AD%89%E5%BE%85%E6%89%AB%E6%8F%8F%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg">
 <meta property="og:image" content="http://yoursite.com/2017/06/09/独立使用相机-Pro-Tutorial/14966545705192/wifi-connecting.jpg">
-<meta property="og:updated_time" content="2017-06-26T04:38:24.000Z">
+<meta property="og:updated_time" content="2017-07-01T04:28:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="独立使用相机教程">
 <meta name="twitter:description" content="相机结构
@@ -545,7 +547,27 @@
 <li><p>设置相机Ethernet 网线连接</p>
 <ul>
 <li>DHCP：用于将 Pro 连入某个局域网络，动态获取网络内的 IP 地址</li>
-<li>Direct：用于将 Pro和 PC/笔记本电脑 直接连接，会分配一个固定的 IP地址</li>
+<li>Direct：用于将 Pro和 PC/笔记本电脑 直接连接<br>  具体用法：<ol>
+<li>使用网线将 pro 与电脑的网口直接相连。如果需要连接的电脑没有网线接口，可以使用 pro 配备的网线与网卡接入电脑的 USB 接口。</li>
+<li>将 pro 的相机设置中，Ethernet 选项切换为“Direct”模式。此时，相机顶部的 IP 地址将会固定显示为“192，168.1.188”</li>
+<li>将另一端连接的电脑，有线网络的IP 地址获取方式设置为手动，将电脑与 Pro 设置在同一个网段。<ul>
+<li>Mac OS：<br><img src="/2017/06/09/独立使用相机-Pro-Tutorial/14966545705192/Mac Direct.png" alt=""><ul>
+<li>打开网络偏好设置</li>
+<li>选择USB 网卡网络，将配置 IPV4选项设置为“手动”，将 IP 地址设置为“192.168.1.100”，子网掩码设置为“255.255.255.0”</li>
+<li>应用保存</li>
+</ul>
+</li>
+<li>Windows：<br><img src="/2017/06/09/独立使用相机-Pro-Tutorial/14966545705192/Win Direct.png" alt=""><ul>
+<li>打开本地网络，右键菜单选择属性，在弹出界面中选择 IPV4地址设置。</li>
+<li>如图，将 IP 地址设置为“192.168.1.100”，子网掩码设置为“255.255.255.0”  </li>
+<li>点击保存                  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>完成以上步骤之后，可以照常的使用电脑端的 Pro 控制软件去操控相机。</li>
+</ol>
+</li>
 </ul>
 </li>
 <li>FlatColor：视频的 FlatColor 模式，开启此项后将会得到更适合后期处理的视频画面</li>
