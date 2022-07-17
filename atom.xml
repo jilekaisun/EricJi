@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>EricJi</title>
+  
+  <subtitle>My little planet .</subtitle>
+  <link href="http://yoursite.com/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2018-10-15T15:18:53.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>EricJi</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>This is the day</title>
+    <link href="http://yoursite.com/2016/10/15/This-is-the-day/"/>
+    <id>http://yoursite.com/2016/10/15/This-is-the-day/</id>
+    <published>2016-10-15T14:16:49.000Z</published>
+    <updated>2018-10-15T15:18:53.000Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+</feed>

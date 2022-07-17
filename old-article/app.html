@@ -1,0 +1,429 @@
+<!DOCTYPE html><html lang="zh-Hans" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>使用 APP 操控相机（以iOS版本为例） | EricJi</title><meta name="author" content="EricJi"><meta name="copyright" content="EricJi"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="一、APP 兼容性要求：  Pro iOS APP 适配机型要求：  处理器为 A7及以上的 iOS 设备，如iPhone 5S及以上的 iPhone、iPad Air&#x2F;Mini2及以上的 iPad、iPod Touch 6。不满足该要求的机型可能会存在预览画面无法正常播放、启动缓慢等问题，但基础的连接操控功能不受影响，请酌情使用。 iOS 系统版本要求8.0及以上。   Pro And">
+<meta property="og:type" content="website">
+<meta property="og:title" content="使用 APP 操控相机（以iOS版本为例）">
+<meta property="og:url" content="http://yoursite.com/old-article/app.html">
+<meta property="og:site_name" content="EricJi">
+<meta property="og:description" content="一、APP 兼容性要求：  Pro iOS APP 适配机型要求：  处理器为 A7及以上的 iOS 设备，如iPhone 5S及以上的 iPhone、iPad Air&#x2F;Mini2及以上的 iPad、iPod Touch 6。不满足该要求的机型可能会存在预览画面无法正常播放、启动缓慢等问题，但基础的连接操控功能不受影响，请酌情使用。 iOS 系统版本要求8.0及以上。   Pro And">
+<meta property="og:locale">
+<meta property="og:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+<meta property="article:published_time" content="2017-06-13T11:08:54.000Z">
+<meta property="article:modified_time" content="2017-08-29T09:26:53.000Z">
+<meta property="article:author" content="EricJi">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://yoursite.com/old-article/app"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '使用 APP 操控相机（以iOS版本为例）',
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2017-08-29 17:26:53'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="EricJi" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">1</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr/></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">EricJi</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="page-site-info"><h1 id="site-title">使用 APP 操控相机（以iOS版本为例）</h1></div></header><main class="layout" id="content-inner"><div id="page"><div id="article-container"><p>一、APP 兼容性要求：</p>
+<ol>
+<li><p>Pro iOS APP 适配机型要求：</p>
+<ul>
+<li>处理器为 A7及以上的 iOS 设备，如iPhone 5S及以上的 iPhone、iPad Air&#x2F;Mini2及以上的 iPad、iPod Touch 6。不满足该要求的机型可能会存在预览画面无法正常播放、启动缓慢等问题，但基础的连接操控功能不受影响，请酌情使用。</li>
+<li>iOS 系统版本要求8.0及以上。</li>
+</ul>
+</li>
+<li><p>Pro Android APP 适配机型要求：</p>
+<ul>
+<li>要求Android 5.0及以上系统，建议使用2016年之后推出的主流旗舰机型。具体的兼容性列表后续推出。</li>
+</ul>
+</li>
+</ol>
+<p>二、与相机建立连接</p>
+<ol>
+<li>手机 APP 提供了两种连接方式：<ul>
+<li><p>局域网连接：<br> 将手机 APP 和相机接入同一个局域网，在 APP 上选择 Connection Method A，填写相机屏幕上的 IP 地址，然后点击连接，连接成功后将进入功能菜单<br><img src="/old-article/app.htm/06/13/app/app_img/1.connectA.png" alt="连接方式 A"></p>
+</li>
+<li><p>相机 AP 连接：<br> 先将相机开启 AP 模式，再用手机扫描并连接对应的热点，一般为 Insta360-Pro-xxxxxx（x 部分为序列号后六位）的格式，默认 AP 连接密码是88888888（数字八个8）。在 APP 上选择 Connection Method B，然后点击连接，将默认与AP固定的“192.168.43.1”IP 建立连接，连接成功后将进入功能菜单<br> <img src="/old-article/app.htm/06/13/app/app_img/2.connectB.png" alt="连接方式 B"></p>
+</li>
+</ul>
+</li>
+</ol>
+<p>三、 功能操作</p>
+<ol>
+<li><p>相机提供了如下功能入口：</p>
+<ul>
+<li>拍照</li>
+<li>录像</li>
+<li>直播推流</li>
+<li>拼接校准</li>
+<li>存储管理</li>
+<li>相机设置（待开发）</li>
+</ul>
+<p> <img src="/old-article/app.htm/06/13/app/app_img/3.homepage.png" alt="首页"></p>
+</li>
+<li><p>预览相机画面：</p>
+<ul>
+<li>点击进入拍照、录像、直播模式，APP 会自动加载预览流，待完成后可进行对应的拍摄：</li>
+<li>开启陀螺仪防抖，该按钮开启状态下，相机的实时拼接功能存储的视频画面，将自动根据陀螺仪数据进行纠正。注意，此功能在拍摄3D 的实时拼接内容或3D 直播时无法生效。</li>
+<li>VR 模式预览按钮，点击切换至 VR 眼镜模式观看预览效果</li>
+<li>关闭预览画面按钮（关闭后可以省电，轻触预览区域再次开启）<br><img src="/old-article/app.htm/06/13/app/app_img/4.video-preview.png" alt="录像预览"></li>
+</ul>
+</li>
+<li><p>拍照</p>
+<ol>
+<li><p>General（拍照基础设置）：<br><img src="/old-article/app.htm/06/13/app/app_img/5.photo-general.PNG"><img src="/old-article/app.htm/06/13/app/app_img/6.photo-mode.PNG"></p>
+<ul>
+<li>Mode（拍摄模式）：<ul>
+<li>Normal（普通拍摄）</li>
+<li>RAW</li>
+<li>HDR</li>
+<li>Burst（一键快速十连拍）</li>
+</ul>
+</li>
+<li>Content Type（内容类型）：<ul>
+<li>360° Pano</li>
+<li>360° 3D</li>
+</ul>
+</li>
+<li>Optical Flow（光流实时拼接选项）</li>
+<li>Delay Timer（延迟拍摄定时器）</li>
+</ul>
+</li>
+<li><p>Exposure（曝光设置）：<br><img src="/old-article/app.htm/06/13/app/app_img/5.photo-general.PNG">   <img src="/old-article/app.htm/06/13/app/app_img/8.photo-exposure-mode.PNG"></p>
+<ul>
+<li>Mode：<ul>
+<li>Auto（自动曝光）</li>
+<li>Manual（手动曝光）</li>
+<li>Isolated Exposure（各镜头独立曝光）</li>
+</ul>
+</li>
+<li>在自动曝光模式下可调整 EV、白平衡</li>
+<li>在手动曝光模式下可调整 ISO、Shutter</li>
+<li>在各镜头独立曝光模式下可调整 EV、白平衡</li>
+<li>可重置曝光参数为默认设置</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>Property（画面属性设置）<br>  <img src="/old-article/app.htm/06/13/app/app_img/9.photo-property.PNG"></p>
+<ul>
+<li>Brightness（亮度）</li>
+<li>Saturation（饱和度）</li>
+<li>Sharpness（锐度）</li>
+<li>Constrast（对比度）</li>
+<li>可重置画面属性参数为默认设置</li>
+</ul>
+</li>
+<li><p>参数值范围：</p>
+<ul>
+<li>EV 范围：普通拍摄情况下是 -5<del>5，HDR 的可调整的 EV 差值范围是-3.9</del>3.9</li>
+<li>ISO 范围：100~6400</li>
+<li>Shutter范围：普通 Shutter 为1&#x2F;2s<del>1&#x2F;8000s，Long Shutter 状态下是1s</del>60s</li>
+<li>WB 档位：Auto（自动白平衡）、2700K、4000K、5000K、6500K、7500K</li>
+<li>Brightness（亮度）：-255~255</li>
+<li>Saturation（饱和度）：0~255</li>
+<li>Sharpness（锐度）：3~6</li>
+<li>Constrast（对比度）：0~255</li>
+</ul>
+</li>
+<li><p>拍照功能归纳：</p>
+<ul>
+<li>拍摄360°全景&#x2F;3D照片，设置Mode 为 Normal、选择 Content Type，设置 Optical Flow 光流实时拼接。相机将会在存储实时拼接的照片的同时，将6个镜头的原片分别也存储下来。如果不开启实时拼接，则只会存储6个镜头的原片。无论何种拍摄设置，相机都会存储4000x3000&#x2F;镜头的原片，可在 Stitcher 中合成最高8K分辨率的全景&#x2F;3D照片。</li>
+<li>拍摄 RAW、HDR、Burst时，没有光流实时拼接选项，只可以存储6镜头原片，用户可配合 Stitcher 进行处理。 RAW 为 DNG 格式，拍摄 HDR 时需要额外设置一个 HDR EV 差值，来控制过曝和欠曝的两组照片的 EV 差值。</li>
+<li>曝光参数的设置 中，Auto&#x2F;Manual 是全局统一的自动&#x2F;手动曝光。如果选择 Isolated Exposure，则6个镜头将会各自独立的自动曝光。独立曝光适合拍摄明暗差距较大的场景，比如拍摄艳阳高照的窗边与室内，比如舞台绚丽明亮但观众席较暗的演唱会。</li>
+<li>用户可使用右下角的保存按钮，将该模式的 General 设置保存到相机的 Customize 内。该操作等同于生成对应模式的二维码，给相机扫描识别保存参数的作用。<br> <img src="/old-article/app.htm/06/13/app/app_img/14.video-save.PNG"></li>
+</ul>
+</li>
+<li><p>录像</p>
+<ol>
+<li><p>General（录像基础设置）：<br><img src="/old-article/app.htm/06/13/app/app_img/10.video-general.PNG">   <img src="/old-article/app.htm/06/13/app/app_img/11.video-mode.PNG"></p>
+<ul>
+<li>Mode（拍摄模式）：<ul>
+<li>Normal（普通拍摄）</li>
+<li>High FPS（高帧率模式，因为是 Binning技术实现，所以画质比普通拍摄的视频略逊色一些）</li>
+<li>Timelapse（延时摄影）</li>
+</ul>
+</li>
+<li>Content Type（内容类型）：<ul>
+<li>360° Pano</li>
+<li>360° 3D</li>
+</ul>
+</li>
+<li>Real-time Stitching（实时拼接选项，如果开启后，需要选择实时拼接存储的视频分辨率）</li>
+<li>Save origins from six lens（存储6个镜头的原片的选项）</li>
+<li>Single lens resolution（开启存储原片的选项后，可选择每个镜头录制的最大视频分辨率）</li>
+<li>Flat color mode（后期空间更大的色彩模式，类似于 Log 功能）</li>
+</ul>
+</li>
+<li><p>Exposure（曝光设置）：</p>
+<ul>
+<li>Mode：<ul>
+<li>Auto（自动曝光）</li>
+<li>Manual（手动曝光）</li>
+<li>Isolated Exposure（各镜头独立曝光）</li>
+</ul>
+</li>
+<li>在自动曝光模式下可调整 EV、白平衡</li>
+<li>在手动曝光模式下可调整 ISO、Shutter</li>
+<li>在各镜头独立曝光模式下可调整 EV、白平衡</li>
+<li>可重置曝光参数为默认设置</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>Property（画面属性设置）</p>
+<ul>
+<li>Brightness（亮度）</li>
+<li>Saturation（饱和度）</li>
+<li>Sharpness（锐度）</li>
+<li>Constrast（对比度）</li>
+<li>可重置画面属性参数为默认设置</li>
+</ul>
+</li>
+<li><p>参数值范围：</p>
+<ul>
+<li>EV 范围：普通拍摄情况下是 -5~5</li>
+<li>ISO 范围：100~6400</li>
+<li>Shutter范围：普通 Shutter 为1&#x2F;30s~1&#x2F;8000s</li>
+<li>WB 档位：Auto（自动白平衡）、2700K、4000K、5000K、6500K、7500K</li>
+<li>Brightness（亮度）：-255~255</li>
+<li>Saturation（饱和度）：0~255</li>
+<li>Sharpness（锐度）：3~6</li>
+<li>Constrast（对比度）：0~255</li>
+</ul>
+</li>
+<li><p>录像功能归纳：</p>
+<ul>
+<li>拍摄360°全景&#x2F;3D普通视频，设置Mode 为 Normal、选择 Content Type，是否开启实时拼接。</li>
+<li>如果开启实时拼接，则实时拼接存储的视频最高分辨率不得超过4K。而Content Type 若是此时选择的是360°3D，则原片每路可存储1920x1440分辨率的视频，可使用 Stitcher 后期合成3840x3840 的3D视频。若是此时 Content Type 选择的是360°Pano，则原片每路可存储2560x1440分辨率的视频，可使用 Stitcher 后期合成5120x2560 的普通全景视频。</li>
+<li>如果关闭可实时拼接，而Content Type 若是此时选择的是360°3D，则原片每路可存储3200x2400分辨率的视频，可使用 Stitcher 后期合成最高6400x6400 的6K 3D视频。若是此时 Content Type 选择的是360°Pano，则原片每路可存储3840x2160分辨率的视频，可使用 Stitcher 后期合成7680x3840 的8K普通全景视频。</li>
+<li>拍摄High FPS高帧率的视频，因为是 Binning技术实现，所以画质比普通拍摄的视频略逊色一些。该模式适合拍摄高速运动或者后期需要调整快放慢放的内容制作场景。Content Type 选择360°3D 的情况下，每路可存储1920x1440@60fps 的原片，可用 Stitcher 合成3840x3840@60fps 的3D 视频。Content Type 选择360°Pano 的情况下，每路可存储1920x1440@60fps 的原片，可用 Stitcher 合成3840x3840@60fps 的3D 视频。</li>
+<li>拍摄 Timelapse 延时摄影的作品时，设置好 Content Type，然后设置每张照片之间的间隔时长即可。注意，间隔时长必须设置为2s 以上，而间隔时间至少得比 Shutter 时间长1s，比如设置的间隔时长为2s，那么 Shutter 最慢可设置为1s。</li>
+<li>Flat color mode（后期空间更大的色彩模式，类似于 Log 功能,用户可以将素材导入后期软件中进行更多的画面细节调整）</li>
+<li>曝光参数的设置 中，Auto&#x2F;Manual 是全局统一的自动&#x2F;手动曝光。如果选择 Isolated Exposure，则6个镜头将会各自独立的自动曝光。独立曝光适合拍摄明暗差距较大的场景，比如拍摄艳阳高照的窗边与室内，比如舞台绚丽明亮但观众席较暗的演唱会。</li>
+<li>用户可使用右下角的保存按钮，将该模式的 General 设置保存到相机的 Customize 内。该操作等同于生成对应模式的二维码，给相机扫描识别保存参数的作用。</li>
+</ul>
+</li>
+<li><p>直播推流</p>
+<ol>
+<li><p>General（直播基础设置）：<br><img src="/old-article/app.htm/06/13/app/app_img/12.live-general.PNG">   <img src="/old-article/app.htm/06/13/app/app_img/13.live-mode.PNG"></p>
+<ul>
+<li>Mode（拍摄模式）：<ul>
+<li>Build-in server（机内服务器推流）</li>
+<li>Custom RTMP server（自定义 RTMP 推流地址）</li>
+<li>HDMI output（HDMI 信号输出模式）</li>
+<li>Aerial（航拍模式，选择该模式，相机将在输出1920x960 HDMI预览画面的同时，保存每路 2560x1440 的原片视频，适用于接 DJI 无人机的图传预览，同时保存录像视频的场景）</li>
+</ul>
+</li>
+<li>Content Type（内容类型）：<ul>
+<li>360° Pano</li>
+<li>360° 3D</li>
+</ul>
+</li>
+<li>Resolution（直播分辨率）</li>
+<li>Bitrate（直播推流码率）</li>
+<li>Live-streaming URL（如果是自定义 RTMP 推流地址的模式，请在此项填写推流地址，由 URL 和 Key 组成）</li>
+<li>Save origins from six lens（边直播边保存6个镜头原片的开关）</li>
+<li>Save stitch（边直播边保存直播视频画面）</li>
+</ul>
+</li>
+<li><p>Exposure（曝光设置）：</p>
+<ul>
+<li>Mode：<ul>
+<li>Auto（自动曝光）</li>
+<li>Manual（手动曝光）</li>
+<li>Isolated Exposure（各镜头独立曝光）</li>
+</ul>
+</li>
+<li>在自动曝光模式下可调整 EV、白平衡</li>
+<li>在手动曝光模式下可调整 ISO、Shutter</li>
+<li>在各镜头独立曝光模式下可调整 EV、白平衡</li>
+<li>可重置曝光参数为默认设置</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>Property（画面属性设置）</p>
+<ul>
+<li>Brightness（亮度）</li>
+<li>Saturation（饱和度）</li>
+<li>Sharpness（锐度）</li>
+<li>Constrast（对比度）</li>
+<li>可重置画面属性参数为默认设置</li>
+</ul>
+</li>
+<li><p>参数值范围：</p>
+<ul>
+<li>EV 范围：普通拍摄情况下是 -5~5</li>
+<li>ISO 范围：100~6400</li>
+<li>Shutter范围：普通 Shutter 为1&#x2F;30s~1&#x2F;8000s</li>
+<li>WB 档位：Auto（自动白平衡）、2700K、4000K、5000K、6500K、7500K</li>
+<li>Brightness（亮度）：-255~255</li>
+<li>Saturation（饱和度）：0~255</li>
+<li>Sharpness（锐度）：3~6</li>
+<li>Constrast（对比度）：0~255</li>
+</ul>
+</li>
+<li><p>直播功能归纳：</p>
+<ul>
+<li>直播分为网络推流和 HDMI 信号输出两种形式。<ul>
+<li>其中网络推流用户可以选择 Build-in server，向相机的 “rtmp:&#x2F;&#x2F;相机IP&#x2F;live&#x2F;live” 地址推流，也可以选择 Custom RTMP Server 填写第三方的推流地址，进行外网直播。诸如 Youtube等平台已支持提供 RTMP 全景直播推流地址。</li>
+<li>HDMI 信号输出模式下，直播流画面以 HDMI 的信号形式对外输出，用户可以使用相机的 HDMI Type-D 接口将画面采集到导播台或者视频采集卡中。而特定的航拍模式下，相机将在输出1920x960 HDMI预览画面的同时，保存每路 2560x1440 的原片视频，适用于接 DJI 无人机的图传预览，同时保存录像视频的场景。</li>
+<li>无论是网络推流还算是 HDMI 信号输出，都可以在直播的同时选择保存6路镜头的原片。因为直播推流本质输出的都是实时拼接好的画面，所以直播的最高分辨率不得超过4K。</li>
+</ul>
+</li>
+<li>曝光参数的设置 中，Auto&#x2F;Manual 是全局统一的自动&#x2F;手动曝光。如果选择 Isolated Exposure，则6个镜头将会各自独立的自动曝光。独立曝光适合直播明暗差距较大的场景，比如拍摄艳阳高照的窗边与室内，比如舞台绚丽明亮但观众席较暗的演唱会。</li>
+<li>用户可使用右下角的保存按钮，将该模式的 General 设置保存到相机的 Customize 内。该操作等同于生成对应模式的二维码，给相机扫描识别保存参数的作用。</li>
+</ul>
+</li>
+<li><p>拼接校准</p>
+<ol>
+<li>功能导航页进入第四个功能，Calibration（拼接校准）。该功能的作用是当相机需要直播、或者拍摄实时拼接的内容时，由于具体拍摄场景之间存在差异，会出现拼接错位等情况。例如相机在不同的远景和近景之间的效果会有差别。所以用户预览或者试拍一些作品发现实时拼接的效果不满意，可以用此功能对相机进行校准。</li>
+<li>进入该功能后请按提示将相机放置在一个开阔的地方，并确保相机球半径1m 内不存在遮挡物，包括使用者自己。然后按下 Start 按钮相机将自动会自动基于当前场景进行拼接校准。拼接完成后请查看预览流确认效果。</li>
+</ol>
+</li>
+<li><p>存储管理</p>
+<ol>
+<li><p>使用手机 APP 拍摄完内容后，可在左下角的快捷入口，进入存储管理的相册，查看相机刚拍和历史拍摄的所有素材文件夹。除了 HDR、RAW、Burst、Timelapse 这四种模式的素材没有预览图之外，其余拍摄的作品都有预览图便于用户快速定位。用户可在手机上通过 http 查看单个素材文件，但因为素材文件体积都较大，手机下载和播放的性能都比较低，建议用户还是使用电脑查看管理拍摄的素材。<br> <img src="/old-article/app.htm/06/13/app/app_img/16.Storage.png"></p>
+</li>
+<li><p>存储管理可查看当前相机配备的存储设备的容量使用情况，用户还可以点击左下方的齿轮图标对该存储设备进行速度检测操作</p>
+</li>
+</ol>
+</li>
+<li><p>相机设置（待开发）</p>
+<ul>
+<li>用户可通过 APP 修改相机的部分设置，查看相机信息。可设置项与相机保持一致。</li>
+</ul>
+</li>
+</ol>
+<p>四、生成二维码给相机识别</p>
+<ol>
+<li><p>相机可以在不与手机APP连接的情况下，扫描识别 APP 生成的二维码。</p>
+<ul>
+<li>打开 APP 左上角的二维码生成器，可以看到拍照、录像、直播推流、设置WiFi 连接信息四块功能。</li>
+<li>其中拍照、录像、直播推流可以设置除了曝光（Exposure）、画面属性（Property）之外的基础设置。请将生成的二维码，对准相机屏幕两侧的镜头的其中一个，等待相机识别。相机扫码识别成功时将会播放识别成功的音效。识别后，即可将参数保存到 Customize 参数档位中，在这之后独立使用相机时，将档位快速切换到 Customize ，即可快速按最近一次的扫码设置来进行拍摄。</li>
+<li>WiFi 连接信息填写后生成二维码，相机识别后将自动连接。<br> <img src="/old-article/app.htm/06/13/app/app_img/17.QR-Video.png">   <img src="/old-article/app.htm/06/13/app/app_img/18.QR-Wifi.png"></li>
+</ul>
+</li>
+<li><p>请注意，如果需要清除相机已保存的扫码信息（包含 Customize 信息和 WiFi 连接信息），请至相机机身的设置菜单中，用 Reset 功能清除。</p>
+</li>
+</ol>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">EricJi</div><div class="author-info__description">Life is either an adventure or nothing at all .</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">1</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2016/10/15/This-is-the-day/" title="This is the day"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="This is the day"/></a><div class="content"><a class="title" href="/2016/10/15/This-is-the-day/" title="This is the day">This is the day</a><time datetime="2016-10-15T14:16:49.000Z" title="Created 2016-10-15 22:16:49">2016-10-15</time></div></div></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2016/10/"><span class="card-archive-list-date">October 2016</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">1</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-07-17T10:44:41.405Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By EricJi</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
