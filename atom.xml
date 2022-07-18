@@ -3,11 +3,11 @@
   <title>EricJi</title>
   
   <subtitle>My little planet .</subtitle>
-  <link href="http://yoursite.com/atom.xml" rel="self"/>
+  <link href="https://jilekaisun.github.io/EricJi/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://jilekaisun.github.io/EricJi/"/>
   <updated>2018-10-15T15:18:53.000Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://jilekaisun.github.io/EricJi/</id>
   
   <author>
     <name>EricJi</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>This is the day</title>
-    <link href="http://yoursite.com/2016/10/15/This-is-the-day/"/>
-    <id>http://yoursite.com/2016/10/15/This-is-the-day/</id>
+    <link href="https://jilekaisun.github.io/EricJi/2016/10/15/This-is-the-day/"/>
+    <id>https://jilekaisun.github.io/EricJi/2016/10/15/This-is-the-day/</id>
     <published>2016-10-15T14:16:49.000Z</published>
     <updated>2018-10-15T15:18:53.000Z</updated>
     
